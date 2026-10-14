@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyDamageSkill" format=3 uid="uid://cl3yvfgw4gn6j"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_7k7il"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://4hebunepn8b8" path="res://scripts/data/enemy_damage_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(288, 160, 32, 32)
+
+[resource]
+resource_name = "Fan of Blades"
+script = ExtResource("skill")
+attack_multiplier = 0.75
+hits = 3
+icon = SubResource("Icon")
+description = "Strike three times. Each hit deals 75% of base attack damage."
+id = "B04_fan"
+title = "Fan of Blades"
+kind = "Special"
+cost = 3
+cooldown = 4

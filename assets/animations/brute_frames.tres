@@ -1,0 +1,164 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dxheevbcq035t"]
+
+[ext_resource type="Texture2D" uid="uid://du7buuxy8fvmh" path="res://assets/Bandits/Sprites/Heavy Bandit/HeavyBandit.png" id="9_mtpfp"]
+[ext_resource type="Texture2D" uid="uid://bifo7qns4xljw" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_0.png" id="attack_0"]
+[ext_resource type="Texture2D" uid="uid://bufk7di4kmwy7" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_1.png" id="attack_1"]
+[ext_resource type="Texture2D" uid="uid://djvr71ilmyshm" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_2.png" id="attack_2"]
+[ext_resource type="Texture2D" uid="uid://bqiwf5xfkb0pj" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_3.png" id="attack_3"]
+[ext_resource type="Texture2D" uid="uid://bikn7w3jkkk07" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_4.png" id="attack_4"]
+[ext_resource type="Texture2D" uid="uid://071dqisaokcw" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_5.png" id="attack_5"]
+[ext_resource type="Texture2D" uid="uid://bpq1wgq662yej" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_6.png" id="attack_6"]
+[ext_resource type="Texture2D" uid="uid://0ybixxqfbk0f" path="res://assets/Bandits/Sprites/Heavy Bandit/Attack/HeavyBandit_Attack_7.png" id="attack_7"]
+[ext_resource type="Texture2D" uid="uid://dvqkuwx0bbr7a" path="res://assets/Bandits/Sprites/Heavy Bandit/Hurt/HeavyBandit_Hurt_0.png" id="hurt_0"]
+[ext_resource type="Texture2D" uid="uid://d7f67838i3ej" path="res://assets/Bandits/Sprites/Heavy Bandit/Hurt/HeavyBandit_Hurt_1.png" id="hurt_1"]
+[ext_resource type="Texture2D" uid="uid://vvybg3ep2383" path="res://assets/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_0.png" id="idle_0"]
+[ext_resource type="Texture2D" uid="uid://bnilsq3ln2r5j" path="res://assets/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_1.png" id="idle_1"]
+[ext_resource type="Texture2D" uid="uid://ca2o1eucxbbi4" path="res://assets/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_2.png" id="idle_2"]
+[ext_resource type="Texture2D" uid="uid://cs8n3s82nb3h0" path="res://assets/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_3.png" id="idle_3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yk77"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(336, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ek1h"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(288, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yidy"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(336, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3chc6"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(336, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoiuf"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(288, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m72au"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w064q"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uis4p"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j0jl"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7erue"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3akki"]
+atlas = ExtResource("9_mtpfp")
+region = Rect2(0, 144, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("attack_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("attack_7")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yk77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ek1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yidy")
+}],
+"loop": 0,
+"name": &"cast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3chc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoiuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m72au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w064q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uis4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j0jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7erue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3akki")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("hurt_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hurt_1")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}]

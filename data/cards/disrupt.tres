@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://c6ghkqlg8j47p"]
+
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="card"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="effect"]
+
+[sub_resource type="AtlasTexture" id="Artwork"]
+atlas = ExtResource("art")
+region = Rect2(352, 96, 32, 32)
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("effect")
+amount = 10
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("effect")
+operation = "interrupt"
+
+[resource]
+resource_name = "Disrupt"
+script = ExtResource("card")
+id = "C25"
+title = "Disrupt"
+cost = 4
+kind = "Skill"
+artwork = SubResource("Artwork")
+rules = "Deal 10 damage. Cancel the enemy's skill (Does not work on basic strikes and blocks)"
+effects = Array[ExtResource("effect")]([SubResource("Effect0"), SubResource("Effect1")])

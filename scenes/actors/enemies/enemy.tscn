@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dasnquq3jxs61"]
+
+[ext_resource type="Resource" uid="uid://uatly3mml1gv" path="res://data/enemies skill/basic_attack.tres" id="3_54fah"]
+[ext_resource type="Resource" uid="uid://cv6fbwvqqbtgo" path="res://data/enemies skill/basic_block.tres" id="4_lwpd1"]
+[ext_resource type="Script" uid="uid://b3p2pwilya213" path="res://scripts/data/enemy_skill.gd" id="5_87lvi"]
+[ext_resource type="PackedScene" path="res://scenes/actors/battle_actor.tscn" id="base"]
+[ext_resource type="Script" uid="uid://dl0bkng56pje8" path="res://scripts/actors/enemy.gd" id="script"]
+
+[node name="Enemy" unique_id=282992575 instance=ExtResource("base")]
+anchors_preset = 0
+script = ExtResource("script")
+basic_attack = ExtResource("3_54fah")
+basic_block = ExtResource("4_lwpd1")
+special_actions = Array[ExtResource("5_87lvi")]([])
+behavior = null
+is_boss = false
+actor_key = "ENEMY"
+display_name = "Enemy"
+
+[node name="Vitals" parent="." index="4"]
+anchors_preset = 12
+offset_top = -118.0
+
+[node name="ActorName" parent="Vitals" index="0"]
+text = "Enemy"
+
+[node name="HealthBar" parent="Vitals/HealthDisplay" index="0"]
+max_value = 30.0
+value = 30.0
+
+[node name="HealthText" parent="Vitals/HealthDisplay" index="1"]
+text = "30 / 30"
+

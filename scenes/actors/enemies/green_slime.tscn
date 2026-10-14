@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c1fwyluwwxj05"]
+
+[ext_resource type="PackedScene" uid="uid://dasnquq3jxs61" path="res://scenes/actors/enemies/enemy.tscn" id="base"]
+[ext_resource type="SpriteFrames" uid="uid://cdbr2qpproayv" path="res://assets/animations/slime_frames.tres" id="frames"]
+[ext_resource type="Texture2D" uid="uid://cgxgd0kuceod1" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="portrait_sheet"]
+[ext_resource type="Script" uid="uid://b3p2pwilya213" path="res://scripts/data/enemy_skill.gd" id="skill"]
+[ext_resource type="Resource" uid="uid://dh6qx40xqpox0" path="res://data/enemies skill/heavy_bounce.tres" id="skill0"]
+
+[sub_resource type="AtlasTexture" id="Portrait"]
+atlas = ExtResource("portrait_sheet")
+region = Rect2(0, 24, 24, 24)
+
+[node name="GreenSlime" unique_id=2143621375 instance=ExtResource("base")]
+artwork = SubResource("Portrait")
+special_actions = Array[ExtResource("skill")]([ExtResource("skill0")])
+actor_key = "E01"
+display_name = "Green Slime"
+description = "A small slime with a powerful bounce. Builds mana for Heavy Bounce."
+max_health = 32
+attack = 7
+defense = 5
+
+[node name="Art" parent="Visuals" index="0"]
+position = Vector2(175, 287)
+
+[node name="AnimatedSprite2D" parent="Visuals/Art" index="0"]
+scale = Vector2(9, 9)
+sprite_frames = ExtResource("frames")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.07831069
+offset = Vector2(0, -9)
+flip_h = true
+
+[node name="Intent" parent="." index="2"]
+grow_horizontal = 2
+
+[node name="EnemyMana" parent="." index="3"]
+grow_horizontal = 2
+
+[node name="ActorName" parent="Vitals" index="0"]
+text = "Green Slime"
+
+[node name="HealthBar" parent="Vitals/HealthDisplay" index="0"]
+max_value = 32.0
+value = 32.0
+
+[node name="HealthText" parent="Vitals/HealthDisplay" index="1"]
+text = "32 / 32"

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cxnr3sm3vy6t2"]
+
+[ext_resource type="PackedScene" uid="uid://dasnquq3jxs61" path="res://scenes/actors/enemies/enemy.tscn" id="base"]
+[ext_resource type="SpriteFrames" uid="uid://dxheevbcq035t" path="res://assets/animations/brute_frames.tres" id="frames"]
+[ext_resource type="Texture2D" uid="uid://vvybg3ep2383" path="res://assets/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_0.png" id="portrait"]
+[ext_resource type="Script" uid="uid://b3p2pwilya213" path="res://scripts/data/enemy_skill.gd" id="skill"]
+[ext_resource type="Resource" uid="uid://bddtjl63jikrh" path="res://data/enemies skill/crushing_slam.tres" id="skill0"]
+
+[node name="IronBrute" unique_id=897248029 instance=ExtResource("base")]
+artwork = ExtResource("portrait")
+special_actions = Array[ExtResource("skill")]([ExtResource("skill0")])
+actor_key = "E10"
+display_name = "Iron Brute"
+description = "A heavily armored fighter with high endurance. Crushing Slam weakens your damage."
+max_health = 80
+attack = 11
+defense = 15
+
+[node name="Art" parent="Visuals" index="0"]
+position = Vector2(184, 284)
+
+[node name="AnimatedSprite2D" parent="Visuals/Art" index="0"]
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("frames")
+animation = &"attack"
+autoplay = "idle"
+offset = Vector2(0, -17)
+
+[node name="Intent" parent="." index="2"]
+grow_horizontal = 2
+
+[node name="EnemyMana" parent="." index="3"]
+grow_horizontal = 2
+
+[node name="ActorName" parent="Vitals" index="0"]
+text = "Iron Brute"
+
+[node name="HealthBar" parent="Vitals/HealthDisplay" index="0"]
+max_value = 80.0
+value = 80.0
+
+[node name="HealthText" parent="Vitals/HealthDisplay" index="1"]
+text = "80 / 80"

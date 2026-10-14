@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardCatalog" format=3 uid="uid://bng7rx5b7gqc4"]
+
+[ext_resource type="Resource" uid="uid://lc0m2xc4vg6b" path="res://data/cards/all_out_barrage.tres" id="16_fyffe"]
+[ext_resource type="Resource" uid="uid://c576vmiv740c2" path="res://data/cards/shield_bash.tres" id="bash"]
+[ext_resource type="Resource" uid="uid://cp4rua1txs1x2" path="res://data/cards/brace.tres" id="brace"]
+[ext_resource type="Resource" uid="uid://bc5nixnu7pwu8" path="res://data/cards/gather_breath.tres" id="breath"]
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="card"]
+[ext_resource type="Script" uid="uid://dqlr3l072wj6t" path="res://scripts/data/card_catalog.gd" id="catalog"]
+[ext_resource type="Resource" uid="uid://c6ghkqlg8j47p" path="res://data/cards/disrupt.tres" id="disrupt"]
+[ext_resource type="Resource" uid="uid://rds4xu0ih7n2" path="res://data/cards/guard.tres" id="guard"]
+[ext_resource type="Resource" uid="uid://hniygdq6f7wv" path="res://data/cards/field_dressing.tres" id="heal"]
+[ext_resource type="Resource" uid="uid://ca30e6d0ucchf" path="res://data/cards/heavy_slash.tres" id="heavy"]
+[ext_resource type="Resource" uid="uid://c7g8vy0ln17hu" path="res://data/cards/basic_strike.tres" id="strike"]
+[ext_resource type="Resource" uid="uid://87a3pmt7tv5" path="res://data/cards/study.tres" id="study"]
+[ext_resource type="Resource" uid="uid://dpp8lqjkne6dj" path="res://data/cards/sweeping_blade.tres" id="sweep"]
+[ext_resource type="Resource" uid="uid://kg2kvvedxgd2" path="res://data/cards/trap.tres" id="trap"]
+[ext_resource type="Resource" uid="uid://c8l1qrdb2xvkd" path="res://data/cards/twin_cut.tres" id="twin"]
+[ext_resource type="Resource" uid="uid://d165dp0mk80yp" path="res://data/cards/shieldwall.tres" id="wall"]
+[ext_resource type="Resource" uid="uid://s1f8jm38vl8v" path="res://data/cards/warm_up.tres" id="warm"]
+
+[resource]
+resource_name = "Game Cards"
+script = ExtResource("catalog")
+cards = Array[ExtResource("card")]([ExtResource("strike"), ExtResource("guard"), ExtResource("study"), ExtResource("breath"), ExtResource("heal"), ExtResource("twin"), ExtResource("warm"), ExtResource("disrupt"), ExtResource("heavy"), ExtResource("brace"), ExtResource("bash"), ExtResource("sweep"), ExtResource("wall"), ExtResource("trap"), ExtResource("16_fyffe")])
+starting_deck = Array[ExtResource("card")]([ExtResource("strike"), ExtResource("strike"), ExtResource("guard"), ExtResource("guard"), ExtResource("bash"), ExtResource("bash"), ExtResource("study"), ExtResource("breath"), ExtResource("breath"), ExtResource("heal"), ExtResource("warm"), ExtResource("twin"), ExtResource("twin"), ExtResource("heavy"), ExtResource("heavy"), ExtResource("brace"), ExtResource("brace"), ExtResource("disrupt"), ExtResource("sweep"), ExtResource("16_fyffe")])

@@ -1,0 +1,62 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game.gd" id="game"]
+[ext_resource type="Script" path="res://scripts/ui/backdrop.gd" id="backdrop"]
+[ext_resource type="Script" path="res://scripts/services/audio.gd" id="audio"]
+[ext_resource type="Theme" path="res://assets/ui/demo_theme.tres" id="theme"]
+[ext_resource type="PackedScene" path="res://scenes/components/card_inspector.tscn" id="inspector"]
+[ext_resource type="Resource" path="res://data/card_catalog.tres" id="catalog"]
+[ext_resource type="Resource" path="res://data/campaigns/demo.tres" id="campaign"]
+
+[node name="CardGame" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("theme")
+script = ExtResource("game")
+card_catalog = ExtResource("catalog")
+campaign = ExtResource("campaign")
+
+[node name="Background" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("backdrop")
+
+[node name="Screens" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Popups" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Audio" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("audio")
+
+[node name="CardInspector" parent="Popups" instance=ExtResource("inspector")]
+unique_name_in_owner = true
+layout_mode = 1

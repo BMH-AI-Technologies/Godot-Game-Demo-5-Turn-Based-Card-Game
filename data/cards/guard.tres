@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://rds4xu0ih7n2"]
+
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+
+[sub_resource type="AtlasTexture" id="Artwork"]
+atlas = ExtResource("art")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="Resource" id="Effect_0"]
+script = ExtResource("2")
+operation = "block"
+amount = 11
+
+[resource]
+resource_name = "Guard"
+script = ExtResource("1")
+id = "C02"
+title = "Guard"
+kind = "Skill"
+target = "self"
+artwork = SubResource("Artwork")
+rules = "Gain 11 Block.
+Lasts until your next turn."
+effects = Array[ExtResource("2")]([SubResource("Effect_0")])

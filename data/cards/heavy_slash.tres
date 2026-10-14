@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://ca30e6d0ucchf"]
+
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+
+[sub_resource type="AtlasTexture" id="Artwork"]
+atlas = ExtResource("art")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="Resource" id="Effect_0"]
+script = ExtResource("2")
+amount = 27
+
+[resource]
+resource_name = "Heavy Slash"
+script = ExtResource("1")
+id = "C27"
+title = "Heavy Slash"
+cost = 3
+hero_class = "Knight"
+artwork = SubResource("Artwork")
+rules = "Deal 27 damage."
+effects = Array[ExtResource("2")]([SubResource("Effect_0")])

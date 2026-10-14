@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://scenes/actors/hero/player.tscn" id="base"]
+[ext_resource type="SpriteFrames" path="res://assets/animations/knight_frames.tres" id="frames"]
+[node name="Knight" instance=ExtResource("base")]
+actor_key = "H01"
+display_name = "The Knight"
+description = "Iron Will: Attack cards deal +5 damage on the first hit against each target."
+max_health = 80
+attack = 0
+attack_bonus = 5
+[node name="AnimatedSprite2D" parent="Visuals/Art" index="0"]
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("frames")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -28)

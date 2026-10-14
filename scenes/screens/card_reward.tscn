@@ -1,0 +1,31 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/screens/run_screen.tscn" id="base"]
+[ext_resource type="Script" path="res://scripts/ui/card_reward.gd" id="script"]
+[node name="CardReward" instance=ExtResource("base")]
+script = ExtResource("script")
+
+[node name="Title" parent="Margin/Layout" index="0"]
+text = "RUN_REWARD_TITLE"
+
+[node name="Recovery" type="Label" parent="Margin/Layout/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Center" type="CenterContainer" parent="Margin/Layout/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Cards" type="HBoxContainer" parent="Margin/Layout/Body/Center"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Confirm" type="Button" parent="Margin/Layout/Body"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(360, 68)
+disabled = true
+text = "RUN_ADD_CARD"

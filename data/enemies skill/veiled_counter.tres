@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyInterruptSkill" format=3 uid="uid://6vpcnkl7gml2"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_qs68i"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://cml8fjuatkhms" path="res://scripts/data/enemy_interrupt_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(352, 96, 32, 32)
+
+[resource]
+resource_name = "Veiled Counter"
+script = ExtResource("skill")
+minimum_card_cost = 4
+icon = SubResource("Icon")
+description = "Cancel a committed Skill costing at least 4 mana after payment. Preserve the normal action."
+hidden = true
+animation = &"cast"
+id = "B04_counter"
+title = "Veiled Counter"
+kind = "Reaction"
+cost = 2
+cooldown = 3

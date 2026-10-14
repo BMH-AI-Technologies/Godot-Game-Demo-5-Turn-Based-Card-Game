@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://lc0m2xc4vg6b"]
+
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="1_3rk1n"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="2_mt3hn"]
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="3_qexhx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rk1n"]
+atlas = ExtResource("1_3rk1n")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="Resource" id="Resource_mt3hn"]
+script = ExtResource("2_mt3hn")
+amount = 10
+hits = 6
+
+[resource]
+resource_name = "Twin Cut"
+script = ExtResource("3_qexhx")
+id = "C60"
+title = "All Out Barrage"
+cost = 7
+artwork = SubResource("AtlasTexture_3rk1n")
+rules = "Deal 10 damage 6 times."
+effects = Array[ExtResource("2_mt3hn")]([SubResource("Resource_mt3hn")])

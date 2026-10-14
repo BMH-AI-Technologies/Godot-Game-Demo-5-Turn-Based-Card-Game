@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://dpp8lqjkne6dj"]
+
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+
+[sub_resource type="AtlasTexture" id="Artwork"]
+atlas = ExtResource("art")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="Resource" id="Effect_0"]
+script = ExtResource("2")
+amount = 20
+
+[resource]
+resource_name = "Sweeping Blade"
+script = ExtResource("1")
+id = "C30"
+title = "Sweeping Blade"
+cost = 4
+hero_class = "Knight"
+target = "all_enemies"
+artwork = SubResource("Artwork")
+rules = "Deal 20 damage to ALL enemies."
+effects = Array[ExtResource("2")]([SubResource("Effect_0")])

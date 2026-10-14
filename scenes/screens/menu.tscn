@@ -1,0 +1,136 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/ui/menu_screen.gd" id="script"]
+[ext_resource type="Theme" path="res://assets/ui/demo_theme.tres" id="theme"]
+
+[ext_resource type="PackedScene" path="res://scenes/components/knight_portrait.tscn" id="portrait"]
+[node name="MainMenu" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 112
+theme_override_constants/margin_right = 112
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="Layout" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Top" type="HBoxContainer" parent="Margin/Layout"]
+layout_mode = 2
+
+[node name="Eyebrow" type="Label" parent="Margin/Layout/Top"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "MENU_EYEBROW"
+size_flags_horizontal = 3
+
+[node name="Settings" type="Button" parent="Margin/Layout/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "SETTINGS"
+custom_minimum_size = Vector2(210, 62)
+
+[node name="Body" type="HBoxContainer" parent="Margin/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Copy" type="VBoxContainer" parent="Margin/Layout/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+theme_override_constants/separation = 22
+
+[node name="Title" type="Label" parent="Margin/Layout/Body/Copy"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 104
+text = "GAME_TITLE"
+
+
+[node name="Tagline" type="Label" parent="Margin/Layout/Body/Copy"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 30
+text = "MENU_TAGLINE"
+autowrap_mode = 2
+
+[node name="Actions" type="VBoxContainer" parent="Margin/Layout/Body/Copy"]
+layout_mode = 2
+custom_minimum_size = Vector2(430, 0)
+size_flags_horizontal = 0
+
+[node name="Play" type="Button" parent="Margin/Layout/Body/Copy/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 62)
+mouse_default_cursor_shape = 2
+text = "PLAY"
+
+
+[node name="Deck" type="Button" parent="Margin/Layout/Body/Copy/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 62)
+mouse_default_cursor_shape = 2
+text = "DECK"
+
+
+
+[node name="Hero" type="VBoxContainer" parent="Margin/Layout/Body"]
+layout_mode = 2
+custom_minimum_size = Vector2(560, 0)
+alignment = 1
+
+[node name="Portrait" parent="Margin/Layout/Body/Hero" instance=ExtResource("portrait")]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="Margin/Layout/Body/Hero"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 30
+text = "The Knight"
+horizontal_alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="Margin/Layout"]
+layout_mode = 2
+
+[node name="Credits" type="Button" parent="Margin/Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 62)
+mouse_default_cursor_shape = 2
+text = "CREDITS"
+
+
+[node name="Quit" type="Button" parent="Margin/Layout/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 62)
+mouse_default_cursor_shape = 2
+text = "QUIT"
+
+
+[node name="Version" type="Label" parent="Margin/Layout/Footer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+text = "DEMO_VERSION"
+size_flags_horizontal = 3
+horizontal_alignment = 2

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyEmptyPocketsSkill" format=3 uid="uid://j6cafpgu16gt"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_rjjvh"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://bniq6k1x1r0m3" path="res://scripts/data/enemy_empty_pockets_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(288, 256, 32, 32)
+
+[resource]
+resource_name = "Empty Pockets"
+script = ExtResource("skill")
+recovery_draw = 2
+block_multiplier = 2
+icon = SubResource("Icon")
+description = "Discard the player's entire hand and gain twice base defense as block. The player draws 2 extra cards next turn."
+id = "B04_pockets"
+title = "Empty Pockets"
+kind = "Ultimate"
+cost = 4
+cooldown = 8

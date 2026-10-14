@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EncounterDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/encounter_definition.gd" id="script"]
+[ext_resource type="PackedScene" path="res://scenes/actors/enemies/green_slime.tscn" id="slime"]
+[ext_resource type="PackedScene" path="res://scenes/actors/enemies/skeleton.tscn" id="skeleton"]
+[resource]
+resource_name = "Ruined Gate"
+script = ExtResource("script")
+title = "Ruined Gate"
+enemies = Array[PackedScene]([ExtResource("slime"), ExtResource("skeleton")])

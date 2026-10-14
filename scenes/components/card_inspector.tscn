@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://du3s1882035vg"]
+
+[ext_resource type="Script" uid="uid://ci1aymu8ju1xq" path="res://scripts/ui/card_inspector.gd" id="script"]
+[ext_resource type="Theme" uid="uid://c0o1ueupqf2gi" path="res://assets/ui/demo_theme.tres" id="theme"]
+
+[node name="CardInspector" type="Control" unique_id=798817913]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+
+[node name="Shade" type="ColorRect" parent="." unique_id=513734328]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Source" type="Label" parent="." unique_id=819370470]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 52.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="Carousel" type="Control" parent="." unique_id=1254961131]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Position" type="Label" parent="." unique_id=2145552768]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
+offset_bottom = -122.0
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Controls" type="CenterContainer" parent="." unique_id=1651975144]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+offset_bottom = -44.0
+mouse_filter = 2
+
+[node name="Row" type="HBoxContainer" parent="Controls" unique_id=673724163]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 18
+
+[node name="Previous" type="Button" parent="Controls/Row" unique_id=421486754]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 58)
+layout_mode = 2
+text = "←"
+
+[node name="Close" type="Button" parent="Controls/Row" unique_id=1299365994]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 58)
+layout_mode = 2
+text = "CLOSE"
+
+[node name="Next" type="Button" parent="Controls/Row" unique_id=986867782]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 58)
+layout_mode = 2
+text = "→"

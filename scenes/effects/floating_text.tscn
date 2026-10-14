@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/ui/floating_text.gd" id="1"]
+[node name="FloatingText" type="Label"]
+z_index = 20
+mouse_filter = 2
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+script = ExtResource("1")

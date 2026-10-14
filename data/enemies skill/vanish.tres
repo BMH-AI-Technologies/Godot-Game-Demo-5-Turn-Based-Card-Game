@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyBlockSkill" format=3 uid="uid://cu5l66x4fbfaa"]
+
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="effect"]
+[ext_resource type="Script" uid="uid://cqnbrrvhm43m" path="res://scripts/data/enemy_block_skill.gd" id="skill"]
+
+[sub_resource type="Resource" id="Weak"]
+script = ExtResource("effect")
+operation = "weak"
+amount = 1
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+resource_name = "Vanish"
+script = ExtResource("skill")
+block_multiplier = 2
+icon = SubResource("Icon")
+description = "Gain twice base defense as block and apply Weak 1 to the player."
+animation = &"cast"
+id = "B04_vanish"
+title = "Vanish"
+kind = "Special"
+cost = 2
+cooldown = 4
+effects = Array[ExtResource("effect")]([SubResource("Weak")])

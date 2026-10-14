@@ -1,0 +1,15 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/components/card.tscn" id="base"]
+[node name="RewardCard" instance=ExtResource("base")]
+custom_minimum_size = Vector2(290, 438)
+offset_right = 290.0
+offset_bottom = 438.0
+
+[node name="Title" parent="Face/Heading" index="1"]
+theme_override_font_sizes/font_size = 23
+
+[node name="Artwork" parent="Face/ArtFrame" index="0"]
+custom_minimum_size = Vector2(0, 120)
+
+[node name="Rules" parent="Face" index="4"]
+theme_override_font_sizes/font_size = 20

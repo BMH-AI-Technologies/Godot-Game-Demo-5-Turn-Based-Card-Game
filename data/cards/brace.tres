@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://cp4rua1txs1x2"]
+
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://byhd8fbnwdddq" path="res://assets/32x32_PixelWeapons_Free.png" id="1_bivnp"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpshu"]
+atlas = ExtResource("1_bivnp")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="Resource" id="Effect_0"]
+script = ExtResource("2")
+operation = "block"
+amount = 21
+
+[resource]
+resource_name = "Brace"
+script = ExtResource("1")
+id = "C28"
+title = "Brace"
+cost = 2
+kind = "Skill"
+hero_class = "Knight"
+target = "self"
+artwork = SubResource("AtlasTexture_dpshu")
+rules = "Gain 21 Block.
+Lasts until your next turn."
+effects = Array[ExtResource("2")]([SubResource("Effect_0")])

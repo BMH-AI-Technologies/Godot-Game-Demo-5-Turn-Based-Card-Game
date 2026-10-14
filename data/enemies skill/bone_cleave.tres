@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyDamageSkill" format=3 uid="uid://dj0tqop5v68qx"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_767ww"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://4hebunepn8b8" path="res://scripts/data/enemy_damage_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(256, 160, 32, 32)
+
+[resource]
+resource_name = "Bone Cleave"
+script = ExtResource("skill")
+hits = 2
+icon = SubResource("Icon")
+description = "Strike twice."
+animation = &"attack_double"
+id = "E02_special"
+title = "Bone Cleave"
+kind = "Special"
+cost = 4
+cooldown = 5

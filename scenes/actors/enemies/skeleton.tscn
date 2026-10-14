@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqafhj2uq6x7y"]
+
+[ext_resource type="PackedScene" uid="uid://dasnquq3jxs61" path="res://scenes/actors/enemies/enemy.tscn" id="base"]
+[ext_resource type="SpriteFrames" uid="uid://dc22751eum8yu" path="res://assets/animations/skeleton_frames.tres" id="frames"]
+[ext_resource type="Texture2D" uid="uid://c3crgglayxq14" path="res://assets/Skeleton enemy/Skeleton enemy.png" id="portrait_sheet"]
+[ext_resource type="Script" uid="uid://b3p2pwilya213" path="res://scripts/data/enemy_skill.gd" id="skill"]
+[ext_resource type="Resource" uid="uid://dj0tqop5v68qx" path="res://data/enemies skill/bone_cleave.tres" id="skill0"]
+
+[sub_resource type="AtlasTexture" id="Portrait"]
+atlas = ExtResource("portrait_sheet")
+region = Rect2(4, 199, 49, 49)
+
+[node name="SkeletonSoldier" unique_id=1473960308 instance=ExtResource("base")]
+artwork = SubResource("Portrait")
+special_actions = Array[ExtResource("skill")]([ExtResource("skill0")])
+actor_key = "E02"
+display_name = "Skeleton Soldier"
+description = "A relentless skeletal soldier that attacks and guards. Bone Cleave strikes twice."
+max_health = 38
+attack = 10
+defense = 5
+
+[node name="Art" parent="Visuals" index="0"]
+position = Vector2(172.5, 354)
+
+[node name="AnimatedSprite2D" parent="Visuals/Art" index="0"]
+scale = Vector2(5, 5)
+sprite_frames = ExtResource("frames")
+animation = &"attack_double"
+autoplay = "idle"
+offset = Vector2(0, -25)
+flip_h = true
+
+[node name="Intent" parent="." index="2"]
+grow_horizontal = 2
+
+[node name="EnemyMana" parent="." index="3"]
+grow_horizontal = 2
+
+[node name="ActorName" parent="Vitals" index="0"]
+text = "Skeleton Soldier"
+
+[node name="HealthBar" parent="Vitals/HealthDisplay" index="0"]
+max_value = 38.0
+value = 38.0
+
+[node name="HealthText" parent="Vitals/HealthDisplay" index="1"]
+text = "38 / 38"

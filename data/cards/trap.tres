@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://kg2kvvedxgd2"]
+
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://clj3wd4vki0jd" path="res://scripts/data/card_definition.gd" id="card"]
+[ext_resource type="Script" uid="uid://cpdpsaalkewt8" path="res://scripts/effects/create_card.gd" id="create"]
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="effect"]
+[ext_resource type="Resource" uid="uid://ca30e6d0ucchf" path="res://data/cards/heavy_slash.tres" id="slash"]
+
+[sub_resource type="AtlasTexture" id="Artwork"]
+atlas = ExtResource("art")
+region = Rect2(448, 320, 32, 32)
+
+[sub_resource type="Resource" id="Weaken"]
+script = ExtResource("effect")
+operation = "weak"
+amount = 1
+
+[sub_resource type="Resource" id="CreateSlash"]
+script = ExtResource("create")
+card = ExtResource("slash")
+
+[resource]
+resource_name = "Trap"
+script = ExtResource("card")
+id = "C51"
+title = "Trap"
+cost = 4
+kind = "Skill"
+hero_class = "Knight"
+artwork = SubResource("Artwork")
+rules = "Apply Weak 1 to an enemy (25% less damage). Create a Heavy Slash in your hand."
+effects = Array[ExtResource("effect")]([SubResource("Weaken"), SubResource("CreateSlash")])

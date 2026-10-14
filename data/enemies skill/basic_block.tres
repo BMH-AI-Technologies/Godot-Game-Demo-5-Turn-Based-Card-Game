@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyBlockSkill" format=3 uid="uid://cv6fbwvqqbtgo"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_1ut02"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://cqnbrrvhm43m" path="res://scripts/data/enemy_block_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(32, 192, 32, 32)
+
+[resource]
+resource_name = "Guard"
+script = ExtResource("skill")
+icon = SubResource("Icon")
+description = "Gain block equal to base defense."
+id = "basic_block"
+title = "Guard"
+kind = "Block"
+target = "self"

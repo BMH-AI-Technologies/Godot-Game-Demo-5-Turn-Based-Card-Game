@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CampaignDefinition" format=3 uid="uid://bgbltjjicg8uy"]
+
+[ext_resource type="Resource" uid="uid://drpvp314g4my3" path="res://data/encounters/war_camp.tres" id="camp"]
+[ext_resource type="Script" uid="uid://cit00hv5o82j" path="res://scripts/data/encounter_definition.gd" id="encounter"]
+[ext_resource type="Resource" uid="uid://cdvjnkx1jw14c" path="res://data/encounters/forest_clearing.tres" id="forest"]
+[ext_resource type="Resource" path="res://data/encounters/ruined_gate.tres" id="gate"]
+[ext_resource type="Script" uid="uid://b58mvtmhxavd" path="res://scripts/data/campaign_definition.gd" id="script"]
+[ext_resource type="Resource" uid="uid://d6ab0knrasi2" path="res://data/encounters/shadow_shrine.tres" id="shrine"]
+
+[resource]
+resource_name = "Road to the Shadow Shrine"
+script = ExtResource("script")
+title = "Road to the Shadow Shrine"
+encounters = Array[ExtResource("encounter")]([ExtResource("forest"), ExtResource("gate"), ExtResource("camp"), ExtResource("shrine")])
+completion_text = "You defeated the Assassin and survived the Shadow Shrine."

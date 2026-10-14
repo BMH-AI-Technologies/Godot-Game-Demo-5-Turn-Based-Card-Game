@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bb6j24b4lvha"]
+
+[ext_resource type="PackedScene" uid="uid://dasnquq3jxs61" path="res://scenes/actors/enemies/enemy.tscn" id="base"]
+[ext_resource type="Script" uid="uid://c77crecebyak7" path="res://scripts/behaviors/veiled_assassin.gd" id="behavior"]
+[ext_resource type="SpriteFrames" uid="uid://cg2vufk6nppgh" path="res://assets/animations/assassin_frames.tres" id="frames"]
+[ext_resource type="Texture2D" uid="uid://7gvdaugnhgvn" path="res://assets/NightBorne/NightBorne.png" id="portrait_sheet"]
+[ext_resource type="Script" uid="uid://b3p2pwilya213" path="res://scripts/data/enemy_skill.gd" id="skill"]
+[ext_resource type="Resource" uid="uid://cl3yvfgw4gn6j" path="res://data/enemies skill/fan_of_blades.tres" id="skill0"]
+[ext_resource type="Resource" uid="uid://cu5l66x4fbfaa" path="res://data/enemies skill/vanish.tres" id="skill1"]
+[ext_resource type="Resource" uid="uid://j6cafpgu16gt" path="res://data/enemies skill/empty_pockets.tres" id="skill2"]
+[ext_resource type="Resource" uid="uid://6vpcnkl7gml2" path="res://data/enemies skill/veiled_counter.tres" id="skill3"]
+
+[sub_resource type="AtlasTexture" id="Portrait"]
+atlas = ExtResource("portrait_sheet")
+region = Rect2(14, 25, 48, 48)
+
+[sub_resource type="Resource" id="Behavior"]
+script = ExtResource("behavior")
+
+[node name="VeiledAssassin" unique_id=365055869 instance=ExtResource("base")]
+custom_minimum_size = Vector2(480, 450)
+clip_contents = true
+artwork = SubResource("Portrait")
+special_actions = Array[ExtResource("skill")]([ExtResource("skill0"), ExtResource("skill1"), ExtResource("skill2"), ExtResource("skill3")])
+behavior = SubResource("Behavior")
+is_boss = true
+actor_key = "B04"
+display_name = "The Veiled Assassin"
+description = "Uses multi-hit blades and empties your hand. Gains 1 Strength at half health."
+max_health = 165
+attack = 8
+defense = 10
+
+[node name="Visuals" parent="." index="1"]
+offset_top = -104.0
+offset_bottom = -81.0
+grounding_animation = &"idle"
+
+[node name="Art" parent="Visuals" index="0"]
+position = Vector2(235.7, 473)
+scale = Vector2(0.5733333, 0.5733333)
+
+[node name="AnimatedSprite2D" parent="Visuals/Art" index="0"]
+scale = Vector2(15, 15)
+sprite_frames = ExtResource("frames")
+animation = &"attack"
+autoplay = "idle"
+offset = Vector2(0, -24)
+flip_h = true
+
+[node name="Intent" parent="." index="2"]
+grow_horizontal = 2
+
+[node name="EnemyMana" parent="." index="3"]
+grow_horizontal = 2
+
+[node name="ActorName" parent="Vitals" index="0"]
+text = "The Veiled Assassin"
+
+[node name="HealthBar" parent="Vitals/HealthDisplay" index="0"]
+max_value = 165.0
+value = 165.0
+
+[node name="HealthText" parent="Vitals/HealthDisplay" index="1"]
+text = "165 / 165"

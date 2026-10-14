@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyDamageSkill" format=3 uid="uid://dh6qx40xqpox0"]
+
+[ext_resource type="Script" uid="uid://bfatxow7nnm2i" path="res://scripts/data/effect.gd" id="1_412t0"]
+[ext_resource type="Texture2D" uid="uid://8aty85oqwv3s" path="res://assets/Shikashi's Fantasy Icons Pack v2/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" id="art"]
+[ext_resource type="Script" uid="uid://4hebunepn8b8" path="res://scripts/data/enemy_damage_skill.gd" id="skill"]
+
+[sub_resource type="AtlasTexture" id="Icon"]
+atlas = ExtResource("art")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+resource_name = "Heavy Bounce"
+script = ExtResource("skill")
+attack_multiplier = 2
+icon = SubResource("Icon")
+description = "Deal twice the enemy's base attack damage."
+id = "E01_special"
+title = "Heavy Bounce"
+kind = "Special"
+cost = 3
+cooldown = 4

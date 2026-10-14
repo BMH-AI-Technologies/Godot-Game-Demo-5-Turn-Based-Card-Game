@@ -1,0 +1,161 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/actors/battle_actor.gd" id="script"]
+[ext_resource type="Theme" path="res://assets/ui/demo_theme.tres" id="theme"]
+[ext_resource type="PackedScene" path="res://scenes/components/enemy_intent.tscn" id="intent"]
+[ext_resource type="PackedScene" path="res://scenes/components/mana_bar.tscn" id="mana"]
+[ext_resource type="Script" path="res://scripts/actors/actor_visuals.gd" id="visuals"]
+[sub_resource type="StyleBoxFlat" id="health_background"]
+bg_color = Color(0.07, 0.12, 0.12, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="health_fill"]
+bg_color = Color(0.24, 0.46, 0.35, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+
+[node name="BattleActor" type="Control"]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 3
+offset_right = 350.0
+offset_bottom = 450.0
+mouse_filter = 2
+theme = ExtResource("theme")
+script = ExtResource("script")
+
+[node name="TargetButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+mouse_default_cursor_shape = 2
+
+[node name="Visuals" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+clip_contents = true
+script = ExtResource("visuals")
+
+[node name="Art" type="Node2D" parent="Visuals"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals/Art"]
+unique_name_in_owner = true
+texture_filter = 1
+
+[node name="Intent" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 78.0
+mouse_filter = 2
+
+[node name="IntentView" parent="Intent" instance=ExtResource("intent")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EnemyMana" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 82.0
+offset_bottom = 110.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 17
+horizontal_alignment = 1
+
+[node name="Vitals" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="ActorName" type="Label" parent="Vitals"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 33)
+theme_override_font_sizes/font_size = 25
+mouse_filter = 2
+text = "Player"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HealthDisplay" type="Control" parent="Vitals"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(310, 28)
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Vitals/HealthDisplay"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+value = 80.0
+show_percentage = false
+theme_override_styles/background = SubResource("health_background")
+theme_override_styles/fill = SubResource("health_fill")
+
+[node name="HealthText" type="Label" parent="Vitals/HealthDisplay"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 18
+text = "80 / 80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaRow" type="CenterContainer" parent="Vitals"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 20)
+mouse_filter = 2
+
+[node name="ManaBar" parent="Vitals/ManaRow" instance=ExtResource("mana")]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(180, 20)
+
+[node name="Status" type="Label" parent="Vitals"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 25)
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.5215686274509804, 0.7843137254901961, 0.7490196078431373, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+text_overrun_behavior = 3
